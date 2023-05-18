@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "436537772120",
+    "project_id": "rolli-polli",
+    "storage_bucket": "rolli-polli.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436537772120:android:a4b3363a9d1181b5c8e22d",
+        "android_client_info": {
+          "package_name": "com.example.polls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436537772120-s1hnv6hjia6rtbh1nd98mmh4s98l84jq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcy0Tx4nZ91SUn_ZfphfxA7SpcSrMH6Z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436537772120-s1hnv6hjia6rtbh1nd98mmh4s98l84jq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "436537772120-5504bh3s7ms1lq1oh1pn86a0fkissd1r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rollipolli.polls"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436537772120:android:0652973eedc8e4d7c8e22d",
+        "android_client_info": {
+          "package_name": "com.rollipolli.polls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436537772120-s1hnv6hjia6rtbh1nd98mmh4s98l84jq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcy0Tx4nZ91SUn_ZfphfxA7SpcSrMH6Z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436537772120-s1hnv6hjia6rtbh1nd98mmh4s98l84jq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "436537772120-5504bh3s7ms1lq1oh1pn86a0fkissd1r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rollipolli.polls"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
