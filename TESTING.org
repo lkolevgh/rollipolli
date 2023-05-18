@@ -1,0 +1,107 @@
+#+title: System and Unit Testing Report - Rolli Polli
+#+author: Rolli Polli Team
+#+date: <2022-11-29 Tue>
+
+** System Test Scenarios
+
+*** User Stories
+1. As a user, I want to be able to create an account so that I can use the app (Sprint 1).
+2. As a registered user, I want to be able to create polls for my community (Sprint 2).
+3. As a registered user, I want to be able to visualize the poll data as bar graphs (Sprint 2).
+4. As a registered user, I want to be able to see other people's polls (Sprint 2).
+5. As a registered user, I want to be able to vote on the polls (Sprint 3).
+6. As a registered user, I want to be able to see polls in my location (Sprint 3).
+7. As a registered user, I want to be able to customize my user profile. (Sprint 4).
+8. As a registered user, I want to be able to see comments on polls. (Sprint 4).
+8. As a registered user, I want to be able to comment on polls. (Sprint 4).
+*** Scenarios
+1. Start polls app; click "Sign Up!" at bottom, and type:
+   + Email = <george.h.gallup@protonmail.com>
+   + Password = <GgHPass84>
+   + Confirm Password = <GgHPass84>
+   + Press the sign up button
+   + User should see local polls screen and be registered.
+2. Select floating button in bottom left with create poll icon and choose "Create global poll".
+   + A new window should pop up.
+   + Type a poll question in the "Poll Question" text field at the top.
+   + Reduce or increase the number of options with the plus or minus buttons.
+   + For each potential choice, type the answer in the colored text boxes.
+   + Select the check mark in the top right corner to publish the poll.
+3. Press the Map icon tab to change tabs global poll feed.
+   + User should see a preview of the results for every poll just to the right of the poll question.
+   + Click on the poll to get an expanded view of the poll with more detailed results
+4. Go back to the global feed.
+   + User should see a list of all global polls created.
+5. Click on any poll in the global feed.
+   + Read the question and click on a colored button to vote on the poll.
+6. Go back to the global feed, and press the location icon tab.
+   + Use should see the tab switch to local polls with their location.
+   + If polls exist in the user's location they will see them.
+   + If polls do not exist in the user's location do the following:
+     + Press the floating button in the bottom left and choose "Create global poll"
+     + A new window should pop up.
+     + Type a poll question in the "Poll Question" text field at the top.
+     + Reduce or increase the number of options with the plus or minus buttons.
+     + For each potential choice, type the answer in the colored text boxes.
+     + Select the check mark in the top right corner to publish the poll.
+7. Return to the main menu; select the last tab in the bottom bar with the user icon.
+   + User should see the page switch to show their profile.
+   + Click on the icon
+   + User should see a card slide in from the bottom.
+   + Select new colors and an emoji to customize the user profile.
+   + User should see their profile update in real-time.
+   + Exit the card by either sliding the card down, or by pressing the back button.
+8. Return to the First tab on the bottom bar; click on a poll in either the global or local section.
+   + Click on the comment button in the top right
+   + User should see a live list of comments that automatically updates with new comments.
+9. Type a comment in the text bot at the bottom
+   + Press the send button to publish the comment.
+   + User should see their comment published in real-time.
+
+** Unit Tests
+   Backend Testing files can be found in [[./testing-backend]].
+
+   Backend consists of firestore rules, so all unit tests are in typescript: [[./testing-backend/firestore.test.ts]]
+
+   Automated CI testing done using Github Actions: [[./.github/workflows/testing-backend.yaml]]
+
+*** Unit Test List
++ Read Poll with authentication
++ Create valid poll (global)
++ Create valid poll (local)
++ Create invalid poll (missing ownerID)
++ Create invalid poll (missing question)
++ Create invalid poll (missing options)
++ Create invalid poll (missing empty votes)
++ Create invalid poll (missing createdAt)
++ Create invalid poll (missing local/global)
++ Create invalid poll (different owner)
++ Create invalid poll (empty question)
++ Create invalid poll (single option)
++ Create invalid poll (zero options)
++ Create invalid poll (already voted)
++ Create invalid poll (client timestamped)
++ Delete poll (author)
++ Delete poll (unauthorized)
++ Vote on poll (valid, first)
++ Vote on poll (valid, update)
++ invalid vote on poll (out of bounds)
++ invalid vote on poll (negative)
++ invalid vote on poll (impostor)
++ invalid vote on poll (self-owned impostor)
++ comment on poll (valid)
++ comment on poll (valid, second level)
++ comment on poll (valid, third level)
++ invalid comment on poll (impostor)
++ invalid comment on poll (empty)
++ invalid comment on poll (missing top level parent)
++ invalid comment on poll (missing second level parent)
++ invalid comment on poll (missing poll)
++ Read User with authentication
++ Set User emoji
++ Set User innerColor
++ Set User outerColor
++ Set User emoji (invalid)
++ Set User innerColor (invalid)
++ Set User outerColor (invalid)
++ Delete User (disalowed)
